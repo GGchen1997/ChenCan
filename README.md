@@ -15,7 +15,7 @@
 </ul><div class="md-section-divider"></div><h3 data-anchor-id="riz4" id="practice-experience">PRACTICE&nbsp;EXPERIENCE</h3><div class="md-section-divider"></div><h4 data-anchor-id="nucr" id="electric-design">Electric Design:</h4><pre data-anchor-id="1som" class="code-black"><code class="code-black">Drawing board with touch-sensitive&nbsp;screens &amp; Cube light:
     Based on STM32F103R8T6, we realized single&nbsp;point&nbsp;positioning , handwritten drawing and Greedy Snake on a 4-wire  resistive analog touch screen.       
     Furthermore, we integrated&nbsp;gestures&nbsp;into&nbsp;the Cube light using a MPU6050 chip and implemented Greedy Snake of 3D version etc. I was  responsible  for most of the game development.
-</code></pre><p data-anchor-id="r3ny">Deep Learning(Image compression based on Pytorch) </p><pre data-anchor-id="07bg" class="code-black"><code class="code-black">Summary:  To implement an end-to-end optimized image compression method combined with Vector Quantization
+</code></pre><p data-anchor-id="ul1w"><img src="http://static.zybuluo.com/GGchencan/f93bvkgp17zay78kpxsudpfr/IMG_20170331_180658.jpg" alt="IMG_20170331_180658.jpg-151.5kB" title=""></p><div class="md-section-divider"></div><h4 data-anchor-id="r3ny" id="deep-learningimage-compression-based-on-pytorch">Deep Learning(Image compression based on Pytorch)</h4><pre data-anchor-id="07bg" class="code-black"><code class="code-black">Summary:  To implement an end-to-end optimized image compression method combined with Vector Quantization
 
 Knowledge&nbsp;Base: 
 [1] Johannes Ballé, Valero Laparra, and Eero P Simoncelli. End-to-end optimized image compression.arXiv preprint arXiv:1611.01704, 2016.
