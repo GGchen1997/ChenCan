@@ -1,33 +1,70 @@
 # ChenCan
-# lab3实验报告
-标签（空格分隔）： PB15151793 陈灿
+---
+标签（空格分隔）： ggchen@mail.ustc.edu.cn   13085517661
 
 ---
 
-本次实验主要完成ucore内核对虚拟内存的管理工作。其总体设计思路还是比较简单，即首先完成初始化虚拟内存管理机制，即需要设置好哪些页需要放在物理内存中，哪些页不需要放在物理内存中，而是可被换出到硬盘上，并涉及完善建立页表映射、页错误异常处理操作等函数实现。然后就执行一组访存测试，看看我们建立的页表项是否能够正确完成虚实地址映射，是否正确描述了虚拟内存页在物理内存中还是在硬盘上，是否能够正确把虚拟内存页在物理内存和硬盘之间进行传递，是否正确实现了页面替换算法等。
+###EDUCATION
 
-##练习0 . 填写已有实验
-同样与lab2类似，使用meld的一款文件比对工具，直接比对lab2和lab3两个文件夹，把其中不相同的部分列举出来，然后比对进行修改即可。比对修改之后，大致罗列一下有以下文件需要我们进行修改：
 
- - default_pmm.c
- - pmm.c
- - trap.c123
- - kdebug.c
+> University of Science and Technology of China Hefei，Anhui 
+Bachelor of Computer Science, Information Security Department 2015 onwards
 
-主要不同的就是上述4个文件了，我直接在meld里面看见不同的，就复制完成了。
-##练习1 .给未被映射的地址映射上物理页
+										
+- *GPA: 3.93*
+- *Rankings: 3/53* 
+- *CET 6: 550*
 
-若“合法”虚拟页已经被描述地很完备了,当ucore访问这些“合法”虚拟页时,会由于没有虚实地址映射而产生页访问异常。练习1完成后,do_pgfault函数会申请一个空闲物理页,并建立好虚实映射关系,从而使得这样的“合法”虚拟页有实际的物理页帧对应。
+###PRACTICE EXPERIENCE
+####Electric Design:
 
-实验要求完成 do_pgfault函数，作用给未被映射的地址映射上物理页。 具体而言，当启动分页机制以后，如果一条指令或数据的虚拟地址所对应的物理页框不在内存中或者访问的类型有错误（比如写一个只读页或用户态程序访问内核态的数据等），就会发生页错误异常。产生页面异常的原因主要有:
+    Drawing board with touch-sensitive screens & Cube light:
+    	Based on STM32F103R8T6, we realized single point positioning , handwritten drawing and Greedy Snake on a 4-wire  resistive analog touch screen.       
+        Furthermore, we integrated gestures into the Cube light using a MPU6050 chip and implemented Greedy Snake of 3D version etc. I was  responsible  for most of the game development.
 
- - 目标页面不存在（页表项全为0，即该线性地址与物理地址尚未建立映射或者已经撤销）; 
- - 相应的物理页面不在内存中（页表项非空，但Present标志位=0，比如在swap分区或磁盘文件上）
- - 访问权限不符合（此时页表项P标志=1，比如企图写只读页面）.
+Deep Learning(Image compression based on Pytorch) 
+ 
+	
 
-当出现上面情况之一,那么就会产生页面异常。
+    Summary:  To implement an end-to-end optimized image compression method combined with Vector Quantization
 
-查看实验代码相关注释：
-> The contents of the CR2 register. The processor loads the CR2 register with the 32-bit linear address that generated the exception. The do_pgfault fun can use this address to locate the corresponding page directory and page-table entries.
+    Knowledge Base: 
+    [1] Johannes Ballé, Valero Laparra, and Eero P Simoncelli. End-to-end optimized image compression.arXiv preprint arXiv:1611.01704, 2016.
+    [2]Eirikur Agustsson,Fabian Mentzer,Michael Tschannen,Lukas Cavigelli.Soft-to-Hard Vector Quantization for End-to-End Learning Compressible Representations.arXiv:1704.00648, 2017.   
+                  
+    Dataset: Our lab selected texture-rich images from flicker, cropped them and made the dataset. 
+    
+	Model: Make a few reasonable adjustments of the network in [1], and replace  Scalar Quantization in [1] with Vector Quantization in [2].
+	
+	Present Achievement: 0.48bpp:PSNR = 18.73db，SSIM =0.70，MSSSIM = 0.80;The results now are not satisfactory,but I am still working on it.
+	
+	Main Problems:  The hyperparameters in the model are not properly set; The memory resources in the cluster is limited, so some updating methods of model parameters introduced by the author can not be realized and have to be simplified a lot; The details of the combination of the two papers may not be handled properly, thus leading a bad expression of the model.
+    Solutions: Try a larger hyperparameters set; Improve some updating methods of model parameters; May add a layer of convolution to enhance expressivity of the model.
 
-可以知道，CR2是页故障线性地址寄存器,保存最后一次出现页故障的全32位线性地址。CR2用于发生页异常时报告出错信息。当发生页异常时,处理器把引起页异常的线性地址保存在CR2中。操作系统中对应的中断服务例程可以检查CR2的内容,从而查出线性地址空间中
+####SJTU summer school（3 weeks)
+
+####IECAS, Summer camp for elite class students（5 days）
+
+####A  volunteer for the awards night held by Qiu Shi Science&Technologies Foudation（3 days）
+
+####Chinese Undergraduate Mathematics Contest in Modeling（3 days，CT system parameter calibration and  imaging）
+
+###PRIZES AND AWARDS
+
+   -  Chinese Undergraduate Mathematics Contest in Modeling, the second prize of Anhui Province                                                      2017.10
+
+   -    USTC scholarship of silver medal								                                                     2016.12
+
+   -  USTC scholarship of silver medal       					                                                2015.12
+
+
+###PROGRAMMING LANGUAGE ABILITY
+
+   -  C（Greedy Snake of 3D version etc）
+
+   -  Python（Image compression using Pytorch etc）
+
+   -  MATLAB（Cryptology Project: DES file encryption and decryption software etc）
+
+
+
